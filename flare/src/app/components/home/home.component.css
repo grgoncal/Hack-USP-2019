@@ -1,0 +1,48 @@
+agm-map {
+  height: 100vh;
+  z-index: 0;
+}
+
+.logo {
+  z-index: 1;
+}
+
+.title, span {
+  z-index: 1;
+  text-align: center;
+  color: orangered;
+  font-family: 'Comfortaa','Josefin Sans', sans-serif;
+}
+
+button {
+  margin: 30px;
+  z-index: 10;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.warning {
+  /* width: 200px;
+  height: 200px; */
+  margin: -15px, 10px;
+  background-color: white;
+  font-size: 20px;
+  font-family: 'Comfortaa', sans-serif;
+  text-align: center;
+}
+
+.check {
+  /* width: 200px;
+  height: 200px; */
+  margin: 55px;
+  background-color: white;
+  font-size: 20px;
+  font-family: 'Comfortaa', sans-serif;
+  text-align: center;
+}

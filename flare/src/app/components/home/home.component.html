@@ -1,0 +1,49 @@
+<h1 class="title">{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [zoom]=17 [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng">
+  </agm-marker>
+  <agm-marker
+    *ngIf="statusFlag"
+    [latitude]="markers2[0]"
+    [longitude]="markers2[1]"
+    [iconUrl]="'https://iconurl.com/84cd1b/32/ant-design-smile.png'">
+  </agm-marker>
+  <agm-marker
+    *ngIf="!statusFlag"
+    [latitude]="markers2[0]"
+    [longitude]="markers2[1]"
+    [iconUrl]="'https://iconurl.com/25383c/32/ant-design-meh.png'">
+  </agm-marker>
+  <agm-marker
+    [latitude]="markers[0]"
+    [longitude]="markers[1]"
+    [iconUrl]="'https://iconurl.com/25383c/32/ant-design-meh.png'">
+  </agm-marker>
+  <agm-marker
+    *ngIf="dangerFlag"
+    [latitude]="lat"
+    [longitude]="lng+0.0003"
+    [iconUrl]="'https://iconurl.com/ff5722/32/ant-design-frown-circle.png'">
+  </agm-marker>
+  <agm-marker
+    *ngIf="sickFlag"
+    [latitude]="lat"
+    [longitude]="lng+0.0003"
+    [iconUrl]="'https://iconurl.com/25383c/32/foundation-skull.png'">
+  </agm-marker>
+
+  <agm-overlay> 
+		<div class="warning" *ngIf="status == 2">
+			{{ nusp }} está em perigo!
+		</div>
+		<div class="warning" *ngIf="status == 3">
+			{{ nusp }} está passando mal!
+		</div>
+		<div class="check" *ngIf="status == 1">
+			{{ nusp }} está procurando companhia!
+		</div>
+  </agm-overlay>
+</agm-map>
